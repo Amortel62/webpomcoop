@@ -3,6 +3,7 @@ import dao.consultation.DaoCons;
 import dao.maj.DaoMaj;
 import entites.Commande;
 import entites.Distributeur;
+import entites.Produit;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -61,6 +62,21 @@ public class SWR_PomCoop {
    
    }
    
+   @GET
+   @PathParam("produit/{codeprod}")
+   
+   @Produces({"application/xml"})
+   public Produit unProduit(@PathParam("codeprod")String codeprod){
+   
+       Produit p = daoCons.getLeProduit(codeprod);
+       
+       
+       return p;
+       
+   
+   
+   }
+
 }
 
 

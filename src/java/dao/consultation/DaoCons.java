@@ -1,6 +1,7 @@
 package dao.consultation;
 import entites.Commande;
 import entites.Distributeur;
+import entites.Produit;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -18,6 +19,11 @@ public class DaoCons {
    public Commande getLaCommande(Long numcom){
    
        return em.find(Commande.class, numcom);
+   }
+   
+   public Produit getLeProduit(String codeprod){
+   
+       return em.find(Produit.class, codeprod);
    }
    
 }
